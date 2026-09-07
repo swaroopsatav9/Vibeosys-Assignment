@@ -109,12 +109,12 @@ CREATE DATABASE vibeosys_db;
 
 ### 5. Run the Server
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload
 ```
 
-- **API Root**: [http://localhost:8000/](http://localhost:8000/)
-- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+- **API Root**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/) *(or [http://localhost:8000/](http://localhost:8000/))*
+- **Swagger UI**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **ReDoc**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
 ---
 

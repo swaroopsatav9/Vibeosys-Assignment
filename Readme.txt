@@ -102,12 +102,12 @@ Step 3: Configure `.env` file in the project root:
 --------------------------------------------------------------------------------
 Run the development server with Uvicorn:
 
-    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    uvicorn app.main:app --reload
 
 Once started, access:
-- Root Service Status: http://localhost:8000/
-- Interactive Swagger UI Docs: http://localhost:8000/docs
-- Alternative ReDoc Docs: http://localhost:8000/redoc
+- Root Service Status: http://127.0.0.1:8000/ (or http://localhost:8000/)
+- Interactive Swagger UI Docs: http://127.0.0.1:8000/docs
+- Alternative ReDoc Docs: http://127.0.0.1:8000/redoc
 
 --------------------------------------------------------------------------------
 6. API ENDPOINTS & USAGE
