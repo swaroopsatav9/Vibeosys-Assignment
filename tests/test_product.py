@@ -72,31 +72,31 @@ def test_create_product_all_uoms(client, uom):
 def test_create_product_invalid_category(client):
     payload = sample_product_payload(category="invalid-category")
     response = client.post("/product/add", json=payload)
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_create_product_invalid_uom(client):
     payload = sample_product_payload(unit_of_measure="kg")  # 'kg' is not in spec ('gm', 'mg' are)
     response = client.post("/product/add", json=payload)
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_create_product_negative_lead_time(client):
     payload = sample_product_payload(lead_time=-5)
     response = client.post("/product/add", json=payload)
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_create_product_empty_name(client):
     payload = sample_product_payload(name="")
     response = client.post("/product/add", json=payload)
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_create_product_description_too_long(client):
     payload = sample_product_payload(description="a" * 251)
     response = client.post("/product/add", json=payload)
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_get_product_info_success(client):
@@ -148,7 +148,7 @@ def test_update_product_invalid_data(client):
     pid = created["id"]
 
     response = client.put(f"/product/{pid}/update", json={"lead_time": -10})
-    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.status_code == 422
 
 
 def test_list_products_empty(client):
